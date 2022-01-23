@@ -1,7 +1,7 @@
 #' Transform DNA code to binary
 #'
 #' @param dna A character vector representing a DNA sequence, where each element
-#'   is a single DNA nucleotide
+#'   is a single DNA nucleotide.
 #' @param codevect A vector of length 4 with the correspondence
 #'   binary-to-quaternary code. The first element has the binary code
 #'   corresponding to A, the second to C, third to G, and fourth to T.
@@ -11,7 +11,7 @@
 #' @export
 #'
 #' @examples
-#' DNAseq <- "CGTGTAGAATGTCTTGGTGCTAAGTAGTATGT"
+#' DNAseq <- c("C", "G", "T", "G", "T", "A", "G", "A", "A", "T", "G", "T", "C")
 #' v <- c("00", "01", "10", "11")
 #' dna_to_bin(DNAseq, v)
 dna_to_bin <- function(dna, codevect) {
