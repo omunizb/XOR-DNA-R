@@ -7,7 +7,7 @@
 pdf_print(x)
 }
 \arguments{
-\item{x}{The string to be split}
+\item{x}{String to be split}
 }
 \description{
 Split long strings so that they do not surpass margins in R markdown PDF

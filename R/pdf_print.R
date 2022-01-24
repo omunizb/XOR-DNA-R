@@ -4,7 +4,7 @@
 #' Split long strings so that they do not surpass margins in R markdown PDF
 #' output.
 #'
-#' @param x The string to be split
+#' @param x String to be split
 #'
 #' @export
 pdf_print <- function(x) {

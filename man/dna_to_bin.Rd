@@ -23,6 +23,5 @@ Transform DNA code to binary
 }
 \examples{
 DNAseq <- c("C", "G", "T", "G", "T", "A", "G", "A", "A", "T", "G", "T", "C")
-v <- c("00", "01", "10", "11")
-dna_to_bin(DNAseq, v)
+dna_to_bin(DNAseq, example_codevect)
 }

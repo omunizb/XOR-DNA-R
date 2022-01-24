@@ -12,8 +12,7 @@
 #'
 #' @examples
 #' binary <- "0110111011001000001110110111111010111001110000101100101100111011"
-#' v <- c("00", "01", "10", "11")
-#' bin_to_quat(binary, v)
+#' bin_to_quat(binary, example_codevect)
 #'
 bin_to_quat <- function(binary, codevect) {
   sub_bin <- substring(binary, seq(1, nchar(binary), 2), seq(2, nchar(binary), 2))

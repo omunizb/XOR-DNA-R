@@ -23,6 +23,5 @@ Transform binary code to DNA
 }
 \examples{
 binseq <- c(1, 10, 11, 10, 11, 0, 10, 0, 0, 11, 10, 11, 1, 11, 11, 10, 10)
-v <- c("00", "01", "10", "11")
-bin_to_dna(binseq, v)
+bin_to_dna(binseq, example_codevect)
 }
