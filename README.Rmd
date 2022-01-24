@@ -44,4 +44,4 @@ DNAseq <- c("C", "G", "T", "G", "T", "A", "G", "A", "A", "T", "G", "T", "C")
 add_error(DNAseq, 0.05)
 ```
 
-Other functions proveded in the package encable the conversion from binary to quaternary DNA code, and vice versa.
+Finally, there are also functions proveded in the package that encable the conversion from binary to quaternary DNA code, and vice versa.
