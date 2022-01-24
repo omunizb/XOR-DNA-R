@@ -63,5 +63,5 @@ add_error(DNAseq, 0.05)
 #> [1] "CGTGTCGAATGTC"
 ```
 
-Finally, there are also functions proveded in the package that encable
+Finally, there are also functions proveded in the package that enable
 the conversion from binary to quaternary DNA code, and vice versa.
