@@ -1,10 +1,19 @@
 #' XOR encoding algorithm
 #'
 #' Simulating XOR encoding algorithm in DNA-based data storage process. The
-#' resulting three DNA fragments are written to a FASTA file.
+#' process starts with data in binary to be stored into DNA. Using a 'key' that
+#' provides the binary code that corresponds to each one of the four DNA
+#' nucleotides, a DNA sequence is obtained, which is the synthesized. Using a
+#' XOR algorithm (see [Sharma et al.
+#' (2020)](https://doi.org/10.1049/iet-nbt.2020.0157)), the sequences are cut
+#' into three fragments and then stored. During this process, some errors may occur that change some nucleotides in the fragments. Thanks to the XOR algorithm, the original DNA can be perfectly recovered despite these errors.
+#'
+#' The resulting three DNA fragments are
+#' written to a FASTA file.
 #'
 #' @inheritParams bin_to_quat
-#' @param outfile The path where the FASTA file with the fragments will be saved.
+#' @param outfile The path where the FASTA file with the fragments will be
+#'   saved.
 #'
 #' @export
 #'
@@ -15,12 +24,12 @@ encoding_XOR <- function(binary, codevect, outfile) {
     binary <- substr(binary, 1, nchar(binary) - 1)
   }
 
-  print(binary)
+  pdf_print(paste("Binary source:", binary))
 
   sub_bin <- substring(binary, seq(1, nchar(binary), 2), seq(2, nchar(binary), 2))
 
   DNAseq <- bin_to_quat(binary, codevect)
-  print(DNAseq)
+  pdf_print(paste("DNA sequence:", DNAseq))
 
   DNA_split <- unlist(stringr::str_split(DNAseq, stringr::boundary("character")))
 

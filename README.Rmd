@@ -1,0 +1,47 @@
+---
+output: github_document
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# dnasim
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+A XOR encoding algorithm in R, based on [Sharma et al. (2020)](https://doi.org/10.1049/iet-nbt.2020.0157).
+
+## Installation
+
+You can install the development version of dnasim from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("omunizb/dnasim")
+```
+
+## Encoding of data to DNA and its retrieval
+
+The functions `encoding_XOR()` and `retrieval_XOR()` can be used to simulate the DNA-based data storage process using the XOR algorithm as a method for error correction:
+
+```{r example}
+library(dnasim)
+encoding_XOR(example_bin, example_codevect, "../fragments.fa")
+retrieval_XOR("../fragments.fa", example_codevect)
+```
+
+Other functions from `dnasim` that may prove useful outside of this specific application are `pdf_print()` and `add_error()`. The first is useful to split long strings so that they do not surpass the margins of PDF output files such as R Markdown knit, whereas the second simulates errors in DNA, changing some of its nucleotides using a user-provided error rate.
+
+```{r}
+DNAseq <- c("C", "G", "T", "G", "T", "A", "G", "A", "A", "T", "G", "T", "C")
+add_error(DNAseq, 0.05)
+```
+
+Other functions proveded in the package encable the conversion from binary to quaternary DNA code, and vice versa.

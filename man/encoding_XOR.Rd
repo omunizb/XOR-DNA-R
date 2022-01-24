@@ -14,11 +14,20 @@ contain an even number of characters.}
 binary-to-quaternary code. The first element has the binary code
 corresponding to A, the second to C, third to G, and fourth to T.}
 
-\item{outfile}{The path where the FASTA file with the fragments will be saved.}
+\item{outfile}{The path where the FASTA file with the fragments will be
+saved.}
 }
 \description{
 Simulating XOR encoding algorithm in DNA-based data storage process. The
-resulting three DNA fragments are written to a FASTA file.
+process starts with data in binary to be stored into DNA. Using a 'key' that
+provides the binary code that corresponds to each one of the four DNA
+nucleotides, a DNA sequence is obtained, which is the synthesized. Using a
+XOR algorithm (see \href{https://doi.org/10.1049/iet-nbt.2020.0157}{Sharma et al. (2020)}), the sequences are cut
+into three fragments and then stored. During this process, some errors may occur that change some nucleotides in the fragments. Thanks to the XOR algorithm, the original DNA can be perfectly recovered despite these errors.
+}
+\details{
+The resulting three DNA fragments are
+written to a FASTA file.
 }
 \examples{
 encoding_XOR(example_bin, example_codevect, "../fragments.fa")

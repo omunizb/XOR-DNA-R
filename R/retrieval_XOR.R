@@ -58,7 +58,7 @@ retrieval_XOR <- function(infile, codevect) {
   }
 
   DNA1 <- paste(DNA1, collapse = "")
-  print(paste("DNA1:", DNA1))
+  pdf_print(paste("DNA1:", DNA1))
 
   # DNA2
   DNA2 <- vector(mode = "numeric",
@@ -69,7 +69,7 @@ retrieval_XOR <- function(infile, codevect) {
   }
 
   DNA2 <- paste(DNA2, collapse = "")
-  print(paste("DNA2:", DNA2))
+  pdf_print(paste("DNA2:", DNA2))
 
   # DNA3
   DNA3 <- vector(mode = "numeric",
@@ -80,13 +80,12 @@ retrieval_XOR <- function(infile, codevect) {
   }
 
   DNA3 <- paste(DNA3, collapse = "")
-  print(paste("DNA3:", DNA3))
+  pdf_print(paste("DNA3:", DNA3))
 
   # The following method by consensus is just an illustration; the actual
-  # error-free method for recovering the original DNA from DNA1-3 is not
-  # detailed by Sharma et al. so it is not reproduced here.
+  # error-free method for recovering the original DNA from DNA1-3 is not detailed here.
 
   DNA_recov <- Biostrings::consensusString(c(DNA1, DNA2, DNA3))
 
-  print(paste("Recovered DNA (consensus):", DNA_recov))
+  pdf_print(paste("Consensus sequence:", DNA_recov))
 }
